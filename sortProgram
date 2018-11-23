@@ -1,0 +1,23 @@
+public class sortProgram {
+
+    private int[] unsortArr;
+
+    public sortProgram(int[] unsortArr){
+        this.unsortArr = unsortArr;
+    }
+
+
+    public void heapSort(int[] arr){
+
+    }
+
+    public void quickSort(int[] arr){
+
+    }
+
+    public void mergSort(int[] arr){
+
+    }
+
+
+}
