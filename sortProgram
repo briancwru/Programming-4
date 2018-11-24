@@ -1,23 +1,60 @@
-public class sortProgram {
+import java.io.IOException;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
-    private int[] unsortArr;
+public class sortProgram{
 
-    public sortProgram(int[] unsortArr){
-        this.unsortArr = unsortArr;
+    public static void heapSort(int[] arr){
+        /*Use PriorityQueue to heapify this array into descending order
+        * which,in another way to say,it's max-on-top binary heap tree
+        * */
+        PriorityQueue<Integer> pq = new PriorityQueue<>(arr.length, (Integer i, Integer j) -> j.compareTo(i));
+        /*Put everything in the input arr to the heapsort itself*/
+        for(int i = 0; i< arr.length;i++){
+            pq.add(i);
+        }
+        PriorityQueue<Integer> storePq = pq;
+
+        int[] storeArr = new int[pq.size()];
+        /*
+        * retrieve the max value of the heap,and then heapify the priorityqueue again
+        * assign each of the max value into the new array
+        * */
+        for(int i =0;i<storeArr.length;i++){
+            storeArr[i] = storePq.peek();
+            pq.remove(pq.peek());
+            storePq = pq;
+        }
+        /*assign the sorted array to the input arr*/
+        arr = storeArr;
     }
 
 
-    public void heapSort(int[] arr){
+
+    public static void quickSort(int[] arr) {
+        buildQuickSort(arr, 0, arr.length - 1);
+    }
+
+    public static void buildQuickSort(int[] arr,int first,int last){
+        if(first >= last){
+
+        }
 
     }
 
-    public void quickSort(int[] arr){
+
+
+
+
+    public static void mergeSort(int[] arr){
 
     }
 
-    public void mergSort(int[] arr){
+    public void main(String args[]) throws IOException{
+        
 
     }
+
 
 
 }
